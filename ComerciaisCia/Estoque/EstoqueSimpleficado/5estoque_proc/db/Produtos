@@ -1,0 +1,15 @@
+Tabela de produtos
+
+ID  Descrição       Estoque mínimo  Estoque máximo
+
+1   Banana maçã     3               100
+2   Manga rosa      5               120
+3   Manga moscatel  5               150
+4   Manga jasmin   10                80
+5   Banana prata    5               150
+
+Estes são os produtos a serem comprados, vendidos e devem ser respeitados seus estoques mínimo e máximo
+
+Além disso precisamos ficar atentos para sempre vender por um preço superior ao comprado. Uma boa medida seria adotar um percentual e aplicar este na venda. Em toda venda fazer uma pesquisa pelo preço da compra do produto e adotar o percentual em cima. Isso evitará a necessidade de ter uma tabela com os preços de venda.
+
+

@@ -1,0 +1,54 @@
+Tenho duas tabelas, compras e estoques
+
+Sempre que efetuar insert, update ou delete em compras preciso que reflita em estoques
+
+Exemplo:
+
+inserir em compras
+
+id  produto     quantidade
+
+1   banana      100
+
+estoques 
+
+Verifica se o produto inserido em compras existe em estoques
+
+- Se existir fará apenas um update na quantidade
+- Caso não exista será efetuado um insert em estoques
+
+id  produto     quantidade
+
+1   banana      100
+
+Novo insert em compras (compras 2) do mesmo produto, banana
+
+id  produto     quantidade
+
+2   banana      50
+
+- Como o produto banana existe em estoques será feito apenas um update da quantidade
+
+1   banana      150
+
+
+update em compras. Atualmente compras tem dois registros: um com 100 e outro com 50, enquanto que estoque tem apenas um único registro, 150. Atualizar a compra 1 de 100 apra 80
+
+id  produto     quantidade
+
+1   banana      80
+
+- Como o produto banana existe em estoques será feito um update, mas como atualizarei a quantidade em estoque, que regra usar?
+
+
+Uma solução: adicionar também compras_id em estoques
+
+1   banana compra_1      100
+2   banana compra_2       50
+
+Para pegar a soma do estoque por produto, preciso agrupar o estoque por produto e retornar a soma da quantidade. É importante que produto e compra_id nãos e repitam, portanto criar a chave
+key(produto_id, compra_id)
+
+Para fazer o update de um produto no estoques, preciso passar o produto ou produto_id e compra_id
+
+

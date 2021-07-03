@@ -1,0 +1,9 @@
+Os campos são:
+
+    CEP
+    Estado
+    Cidade ou municipio
+    Bairro
+    Logradouro
+    Nome do edifício, se específico (campo opcional) 
+

@@ -1,0 +1,30 @@
+
+atualizaestoque`( $id_prod, $qtde_comprada, $valor_unit){
+    SELECT count(*) as contador FROM estoques WHERE produto_id = $id_prod;
+
+    if(contador > 0){
+        UPDATE estoques SET quantidade=quantidade + $qtde_comprada, valor_unitario= $valor_unit WHERE produto_id = $id_prod;
+    }else{
+        INSERT INTO estoques (produto_id, quantidade, valor_unitario) values ($id_prod, $qtde_comprada, $valor_unit);
+    }
+}
+
+// Após excluir cada compra
+atualizaestoque (old.produto_id, old.quantidade * -1, old.valor_unitario);
+
+// Após inserir cada compra
+atualizaestoque (new.produto_id, new.quantidade, new.valor_unitario);
+
+// Após atualizar cada compra
+atualizaestoque (new.produto_id, new.quantidade - old.quantidade, new.valor_unitario);
+
+// Após excluir cada venda
+atualizaestoque (old.produto_id, old.quantidade, old.valor_unitario);
+
+// Após inserir cada venda
+atualizaestoque (new.produto_id, new.quantidade * -1, new.valor_unitario);
+
+// Após atualizar cada venda
+atualizaestoque (new.produto_id, old.quantidade - new.quantidade, new.valor_unitario);
+
+

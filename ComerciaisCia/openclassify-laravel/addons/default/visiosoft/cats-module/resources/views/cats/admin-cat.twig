@@ -1,0 +1,46 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    {% include "theme::partials/messages" %}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-block">
+
+                {% set actions = ['save'] %}
+
+                {% if id is not null %}
+                    {% set actions = ['update'] %}
+                {% endif %}
+
+                {% set form = form('cats','category').entry(id).actions(actions).get() %}
+                {{ form_open({
+                    'class': 'form ' ~ form.options.class ,
+                    'enctype': 'multipart/form-data',
+                })|raw }}
+                <fieldset>
+                    <div class="section">
+                        {% set fields = form.fields.base().pluck('field_name').all() %}
+                        <div class="field-group name">
+                            {% for field in form.fields.translations('name') %}
+                                {{ field.render({'form': form})|raw }}
+                            {% endfor %}
+                        </div>
+                        {{ form.fields.slug|raw }}
+                        <input type="hidden" name="parent_category"
+                               value="{% if form.fields.parent_category.value.id is defined %}{{ form.fields.parent_category.value.id }}{% elseif app.request.get('parent')  is defined %}{{ app.request.get('parent') }}{% endif %}">
+                        {{ form.fields.icon|raw }}
+                        {{ form.fields.seo_keyword|raw }}
+                        {{ form.fields.seo_description|raw }}
+                    </div><!-- section -->
+                </fieldset>
+            </div>
+        </div>
+        <div class="controls card">
+            <div class="card-block">
+                {{ form.actions|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

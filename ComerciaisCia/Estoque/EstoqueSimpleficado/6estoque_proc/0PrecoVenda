@@ -1,0 +1,17 @@
+Para automatizar o preco de venda
+
+Criarei uma stored procedure para mostrar o preco de compra aumentaado em 10%
+
+Isso para ajudar a verificar o preço de venda, que deve ser sempre 10% a mais que o preço de compra.
+
+-- Stored procedure que devolve o preco de compra de um produto com mais 10%
+
+DELIMITER //
+  CREATE PROCEDURE `sp_compraspreco`( `id_prod` int)
+BEGIN
+    SELECT ROUND(preco * 1.1, 2) as preco FROM compras WHERE produto_id = id_prod;
+END //
+DELIMITER ;
+
+-- call sp_compraspreco(1)
+

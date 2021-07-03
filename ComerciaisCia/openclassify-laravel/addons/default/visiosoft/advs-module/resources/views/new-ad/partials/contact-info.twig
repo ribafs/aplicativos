@@ -1,0 +1,40 @@
+<div id="contactInfo" class="mb-3">
+    <h3>{{ trans('visiosoft.module.advs::field.contact_info') }}</h3>
+{#    TODO Add an option to show or hide phone number #}
+{#    <div id="reachInfo">#}
+{#        <p>Size nasıl ulaşılsın?</p>#}
+{#        <div>#}
+{#            <label class="mr-3">#}
+{#                <input type="radio" class="mr-1" checked>#}
+{#                Telefon numaralarım ile#}
+{#            </label>#}
+{#            <label>#}
+{#                <input type="radio" class="mr-1">#}
+{#                Telefonla ulaşılmak istemiyorum#}
+{#            </label>#}
+{#        </div>#}
+{#    </div>#}
+    <div id="contactSummary" class="d-flex justify-content-between flex-wrap">
+        <label>
+            {{ trans('visiosoft.module.profile::field.name.name') }}
+            <input type="text" class="d-block mt-3 w-100 border-0 bg-white infoName" value="{{ auth_user().name }}"
+                   disabled>
+        </label>
+        <label>
+            {{ trans('visiosoft.module.profile::field.gsm_phone.name') }}
+            <input type="text" class="d-block mt-3 w-100 border-0 bg-white infoGsmPhone" disabled
+                   value="{{ auth_user().gsm_phone }}">
+        </label>
+        <label>
+            {{ trans('visiosoft.module.profile::field.office_phone.name') }}
+            <input type="text" class="d-block mt-3 w-100 border-0 bg-white infoOfficePhone" disabled
+                   value="{{ auth_user().office_phone }}">
+        </label>
+    </div>
+    <div id="editContact">
+        <button type="button" class="d-flex ml-auto align-items-center border-0 editInformationUser">
+            {{ img('visiosoft.module.advs::images/create/contact-edit.svg').data|raw }}
+            <span>{{ trans('visiosoft.module.advs::field.update_my_contact_info') }}</span>
+        </button>
+    </div>
+</div>

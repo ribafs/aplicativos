@@ -1,0 +1,5 @@
+Criar um projeto usando código PHP que represente o projeto usando stored procedures e triggers
+
+No projeto com PHP o campo produto_id nas tabelas deve ser mostrado com uma combo que liste os nomes dos produtos
+
+

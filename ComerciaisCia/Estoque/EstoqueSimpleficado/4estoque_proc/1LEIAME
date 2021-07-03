@@ -1,0 +1,6 @@
+Nesta fase, como me pareceu que o estoque deve guardar apenas os produtos, nomes e quantidades, então removi o campo valor_unitario de estoques
+Com isso precisei ajustar a stored procedure e todas as triggers, removendo o campo valor_unitario da stored procedure.
+
+Após testar, criando um produto, comprando o mesmo e também o vendendo o estoque variou corretamente.
+
+

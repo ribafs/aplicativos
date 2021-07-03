@@ -1,0 +1,2 @@
+Esta tabela, estoques, será cadastrada automaticamente através da stored procedure e das triggers.
+Não será cadastrada manualmente, podendo apenas ser listados os registros.

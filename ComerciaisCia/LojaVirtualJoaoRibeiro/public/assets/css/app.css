@@ -1,0 +1,40 @@
+/* app.css */
+
+/* * {
+    box-shadow: inset 0px 0px 1px rgba(255,0,0,1);
+} */
+
+.navegacao{
+    background-color: rgb(154, 171, 194);
+    color: black;
+}
+
+.rodape{
+    background-color: rgb(60, 74, 82);
+    color: white;
+}
+
+.nav-item{
+    text-decoration: none;
+    color: white;
+    margin: 0px 10px;
+}
+
+.nav-item:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.espaco-fundo{
+    margin-bottom: 80px;
+}
+
+.box-produto{
+    border:1px solid rgb(150,150,150);
+    border-radius: 10px;
+}
+
+.btn-100{ min-width: 100px !important; }
+.btn-125{ min-width: 125px !important; }
+.btn-150{ min-width: 150px !important; }
+.btn-175{ min-width: 175px !important; }
