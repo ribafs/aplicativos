@@ -32,6 +32,8 @@ Uma grande variedade de aplicativos em PHP
 - Ótimo Gerenciador de arquivos tinyfilemanager
 - Unzipper
 
+E mais
+
 ## Licença
 
 MIT
