@@ -1,4 +1,4 @@
-# Controle de Estoque Simplificado em PHP do "zero"
+# CCRUD Simples em PHP do "zero"
 
 Partindo de um pequeno script de paginação que usa o plugin do jQuery bootpag.
 
