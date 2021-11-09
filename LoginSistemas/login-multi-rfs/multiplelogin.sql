@@ -17,7 +17,7 @@ CREATE TABLE `masterlogin` (
 
 INSERT INTO `masterlogin` (`id`, `username`, `email`, `password`, `role`) VALUES
 (11,	'hamid',	'hamid@gmail.com',	'123456',	'admin'),
-(12,	'ribafs',	'ribafs@gmail.com',	'abir1956',	'employee'),
+(12,	'ribafs',	'ribafs@gmail.com',	'abir56',	'employee'),
 (13,	'user',	'user@user.com',	'123456',	'user');
 
 -- 2020-03-06 22:30:15
